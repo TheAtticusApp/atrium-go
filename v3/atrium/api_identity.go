@@ -33,13 +33,13 @@ The identify endpoint begins an identification process for an already-existing m
 
 @return MemberResponseBody
 */
-func (a *IdentityApiService) IdentifyMember(ctx context.Context, memberGUID string, userGUID string) (atrium.MemberResponseBody, *http.Response, error) {
+func (a *IdentityApiService) IdentifyMember(ctx context.Context, memberGUID string, userGUID string) (MemberResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.MemberResponseBody
+		localVarReturnValue MemberResponseBody
 	)
 
 	// create path and map variables
@@ -125,7 +125,7 @@ func (a *IdentityApiService) IdentifyMember(ctx context.Context, memberGUID stri
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.MemberResponseBody
+			var v MemberResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -150,13 +150,13 @@ This endpoint returns an array with information about every account associated w
 
 @return AccountOwnersResponseBody
 */
-func (a *IdentityApiService) ListAccountOwners(ctx context.Context, memberGUID string, userGUID string) (atrium.AccountOwnersResponseBody, *http.Response, error) {
+func (a *IdentityApiService) ListAccountOwners(ctx context.Context, memberGUID string, userGUID string) (AccountOwnersResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.AccountOwnersResponseBody
+		localVarReturnValue AccountOwnersResponseBody
 	)
 
 	// create path and map variables
@@ -242,7 +242,7 @@ func (a *IdentityApiService) ListAccountOwners(ctx context.Context, memberGUID s
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.AccountOwnersResponseBody
+			var v AccountOwnersResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

@@ -33,13 +33,13 @@ Call this endpoint to create a new user. Atrium will respond with the newly-crea
 
 @return UserResponseBody
 */
-func (a *UsersApiService) CreateUser(ctx context.Context, body atrium.UserCreateRequestBody) (atrium.UserResponseBody, *http.Response, error) {
+func (a *UsersApiService) CreateUser(ctx context.Context, body UserCreateRequestBody) (UserResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.UserResponseBody
+		localVarReturnValue UserResponseBody
 	)
 
 	// create path and map variables
@@ -125,7 +125,7 @@ func (a *UsersApiService) CreateUser(ctx context.Context, body atrium.UserCreate
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.UserResponseBody
+			var v UserResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -252,13 +252,13 @@ type ListUsersOpts struct {
 	RecordsPerPage optional.Int32
 }
 
-func (a *UsersApiService) ListUsers(ctx context.Context, localVarOptionals *ListUsersOpts) (atrium.UsersResponseBody, *http.Response, error) {
+func (a *UsersApiService) ListUsers(ctx context.Context, localVarOptionals *ListUsersOpts) (UsersResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.UsersResponseBody
+		localVarReturnValue UsersResponseBody
 	)
 
 	// create path and map variables
@@ -348,7 +348,7 @@ func (a *UsersApiService) ListUsers(ctx context.Context, localVarOptionals *List
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.UsersResponseBody
+			var v UsersResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -372,13 +372,13 @@ Use this endpoint to read the attributes of a specific user.
 
 @return UserResponseBody
 */
-func (a *UsersApiService) ReadUser(ctx context.Context, userGUID string) (atrium.UserResponseBody, *http.Response, error) {
+func (a *UsersApiService) ReadUser(ctx context.Context, userGUID string) (UserResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.UserResponseBody
+		localVarReturnValue UserResponseBody
 	)
 
 	// create path and map variables
@@ -463,7 +463,7 @@ func (a *UsersApiService) ReadUser(ctx context.Context, userGUID string) (atrium
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.UserResponseBody
+			var v UserResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -494,13 +494,13 @@ type UpdateUserOpts struct {
 	Body optional.Interface
 }
 
-func (a *UsersApiService) UpdateUser(ctx context.Context, userGUID string, localVarOptionals *UpdateUserOpts) (atrium.UserResponseBody, *http.Response, error) {
+func (a *UsersApiService) UpdateUser(ctx context.Context, userGUID string, localVarOptionals *UpdateUserOpts) (UserResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Put")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.UserResponseBody
+		localVarReturnValue UserResponseBody
 	)
 
 	// create path and map variables
@@ -531,7 +531,7 @@ func (a *UsersApiService) UpdateUser(ctx context.Context, userGUID string, local
 	// body params
 	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
 
-		localVarOptionalBody, localVarOptionalBodyok := localVarOptionals.Body.Value().(atrium.UserUpdateRequestBody)
+		localVarOptionalBody, localVarOptionalBodyok := localVarOptionals.Body.Value().(UserUpdateRequestBody)
 		if !localVarOptionalBodyok {
 			return localVarReturnValue, nil, reportError("body should be UserUpdateRequestBody")
 		}
@@ -594,7 +594,7 @@ func (a *UsersApiService) UpdateUser(ctx context.Context, userGUID string, local
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.UserResponseBody
+			var v UserResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

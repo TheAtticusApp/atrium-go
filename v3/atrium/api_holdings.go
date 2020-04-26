@@ -32,13 +32,13 @@ Use this endpoint to read all holdings associated with a specific user.
 
 @return HoldingsResponseBody
 */
-func (a *HoldingsApiService) ListHoldings(ctx context.Context, userGUID string) (atrium.HoldingsResponseBody, *http.Response, error) {
+func (a *HoldingsApiService) ListHoldings(ctx context.Context, userGUID string) (HoldingsResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.HoldingsResponseBody
+		localVarReturnValue HoldingsResponseBody
 	)
 
 	// create path and map variables
@@ -123,7 +123,7 @@ func (a *HoldingsApiService) ListHoldings(ctx context.Context, userGUID string) 
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.HoldingsResponseBody
+			var v HoldingsResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -148,13 +148,13 @@ Use this endpoint to read all holdings associated with a specific account.
 
 @return HoldingsResponseBody
 */
-func (a *HoldingsApiService) ListHoldingsByAccount(ctx context.Context, accountGUID string, userGUID string) (atrium.HoldingsResponseBody, *http.Response, error) {
+func (a *HoldingsApiService) ListHoldingsByAccount(ctx context.Context, accountGUID string, userGUID string) (HoldingsResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.HoldingsResponseBody
+		localVarReturnValue HoldingsResponseBody
 	)
 
 	// create path and map variables
@@ -240,7 +240,7 @@ func (a *HoldingsApiService) ListHoldingsByAccount(ctx context.Context, accountG
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.HoldingsResponseBody
+			var v HoldingsResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -265,13 +265,13 @@ Use this endpoint to read all holdings associated with a specific member.
 
 @return HoldingsResponseBody
 */
-func (a *HoldingsApiService) ListHoldingsByMember(ctx context.Context, memberGUID string, userGUID string) (atrium.HoldingsResponseBody, *http.Response, error) {
+func (a *HoldingsApiService) ListHoldingsByMember(ctx context.Context, memberGUID string, userGUID string) (HoldingsResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.HoldingsResponseBody
+		localVarReturnValue HoldingsResponseBody
 	)
 
 	// create path and map variables
@@ -357,7 +357,7 @@ func (a *HoldingsApiService) ListHoldingsByMember(ctx context.Context, memberGUI
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.HoldingsResponseBody
+			var v HoldingsResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -382,13 +382,13 @@ Use this endpoint to read the attributes of a specific holding.
 
 @return HoldingResponseBody
 */
-func (a *HoldingsApiService) ReadHolding(ctx context.Context, holdingGUID string, userGUID string) (atrium.HoldingResponseBody, *http.Response, error) {
+func (a *HoldingsApiService) ReadHolding(ctx context.Context, holdingGUID string, userGUID string) (HoldingResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.HoldingResponseBody
+		localVarReturnValue HoldingResponseBody
 	)
 
 	// create path and map variables
@@ -474,7 +474,7 @@ func (a *HoldingsApiService) ReadHolding(ctx context.Context, holdingGUID string
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.HoldingResponseBody
+			var v HoldingResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

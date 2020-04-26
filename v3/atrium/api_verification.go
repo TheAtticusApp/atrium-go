@@ -33,13 +33,13 @@ Use this endpoint to check whether account and routing numbers are available for
 
 @return AccountNumbersResponseBody
 */
-func (a *VerificationApiService) ListAccountNumbers(ctx context.Context, memberGUID string, userGUID string) (atrium.AccountNumbersResponseBody, *http.Response, error) {
+func (a *VerificationApiService) ListAccountNumbers(ctx context.Context, memberGUID string, userGUID string) (AccountNumbersResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.AccountNumbersResponseBody
+		localVarReturnValue AccountNumbersResponseBody
 	)
 
 	// create path and map variables
@@ -125,7 +125,7 @@ func (a *VerificationApiService) ListAccountNumbers(ctx context.Context, memberG
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.AccountNumbersResponseBody
+			var v AccountNumbersResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -150,13 +150,13 @@ Use this endpoint to check whether account and routing numbers are available for
 
 @return AccountNumbersResponseBody
 */
-func (a *VerificationApiService) ListAccountNumbersByAccount(ctx context.Context, accountGUID string, userGUID string) (atrium.AccountNumbersResponseBody, *http.Response, error) {
+func (a *VerificationApiService) ListAccountNumbersByAccount(ctx context.Context, accountGUID string, userGUID string) (AccountNumbersResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.AccountNumbersResponseBody
+		localVarReturnValue AccountNumbersResponseBody
 	)
 
 	// create path and map variables
@@ -242,7 +242,7 @@ func (a *VerificationApiService) ListAccountNumbersByAccount(ctx context.Context
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.AccountNumbersResponseBody
+			var v AccountNumbersResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -267,13 +267,13 @@ The verify endpoint begins a verification process for a member.
 
 @return MemberResponseBody
 */
-func (a *VerificationApiService) VerifyMember(ctx context.Context, memberGUID string, userGUID string) (atrium.MemberResponseBody, *http.Response, error) {
+func (a *VerificationApiService) VerifyMember(ctx context.Context, memberGUID string, userGUID string) (MemberResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.MemberResponseBody
+		localVarReturnValue MemberResponseBody
 	)
 
 	// create path and map variables
@@ -359,7 +359,7 @@ func (a *VerificationApiService) VerifyMember(ctx context.Context, memberGUID st
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.MemberResponseBody
+			var v MemberResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

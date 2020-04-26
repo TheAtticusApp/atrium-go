@@ -34,13 +34,13 @@ Calling this endpoint initiates an aggregation event for the member. This brings
 
 @return MemberResponseBody
 */
-func (a *MembersApiService) AggregateMember(ctx context.Context, memberGUID string, userGUID string) (atrium.MemberResponseBody, *http.Response, error) {
+func (a *MembersApiService) AggregateMember(ctx context.Context, memberGUID string, userGUID string) (MemberResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.MemberResponseBody
+		localVarReturnValue MemberResponseBody
 	)
 
 	// create path and map variables
@@ -126,7 +126,7 @@ func (a *MembersApiService) AggregateMember(ctx context.Context, memberGUID stri
 		}
 
 		if localVarHttpResponse.StatusCode == 202 {
-			var v atrium.MemberResponseBody
+			var v MemberResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -151,13 +151,13 @@ This endpoint operates much like the _aggregate member_ endpoint except that it 
 
 @return MemberResponseBody
 */
-func (a *MembersApiService) AggregateMemberBalances(ctx context.Context, memberGUID string, userGUID string) (atrium.MemberResponseBody, *http.Response, error) {
+func (a *MembersApiService) AggregateMemberBalances(ctx context.Context, memberGUID string, userGUID string) (MemberResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.MemberResponseBody
+		localVarReturnValue MemberResponseBody
 	)
 
 	// create path and map variables
@@ -243,7 +243,7 @@ func (a *MembersApiService) AggregateMemberBalances(ctx context.Context, memberG
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.MemberResponseBody
+			var v MemberResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -268,13 +268,13 @@ This endpoint allows you to create a new member. Members are created with the re
 
 @return MemberResponseBody
 */
-func (a *MembersApiService) CreateMember(ctx context.Context, userGUID string, body atrium.MemberCreateRequestBody) (atrium.MemberResponseBody, *http.Response, error) {
+func (a *MembersApiService) CreateMember(ctx context.Context, userGUID string, body MemberCreateRequestBody) (MemberResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.MemberResponseBody
+		localVarReturnValue MemberResponseBody
 	)
 
 	// create path and map variables
@@ -361,7 +361,7 @@ func (a *MembersApiService) CreateMember(ctx context.Context, userGUID string, b
 		}
 
 		if localVarHttpResponse.StatusCode == 202 {
-			var v atrium.MemberResponseBody
+			var v MemberResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -483,13 +483,13 @@ The extend_history endpoint begins the process of fetching up to 24 months of da
 
 @return MemberResponseBody
 */
-func (a *MembersApiService) ExtendHistory(ctx context.Context, memberGUID string, userGUID string) (atrium.MemberResponseBody, *http.Response, error) {
+func (a *MembersApiService) ExtendHistory(ctx context.Context, memberGUID string, userGUID string) (MemberResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.MemberResponseBody
+		localVarReturnValue MemberResponseBody
 	)
 
 	// create path and map variables
@@ -575,7 +575,7 @@ func (a *MembersApiService) ExtendHistory(ctx context.Context, memberGUID string
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.MemberResponseBody
+			var v MemberResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -609,13 +609,13 @@ type ListMemberAccountsOpts struct {
 	RecordsPerPage optional.Int32
 }
 
-func (a *MembersApiService) ListMemberAccounts(ctx context.Context, memberGUID string, userGUID string, localVarOptionals *ListMemberAccountsOpts) (atrium.AccountsResponseBody, *http.Response, error) {
+func (a *MembersApiService) ListMemberAccounts(ctx context.Context, memberGUID string, userGUID string, localVarOptionals *ListMemberAccountsOpts) (AccountsResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.AccountsResponseBody
+		localVarReturnValue AccountsResponseBody
 	)
 
 	// create path and map variables
@@ -707,7 +707,7 @@ func (a *MembersApiService) ListMemberAccounts(ctx context.Context, memberGUID s
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.AccountsResponseBody
+			var v AccountsResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -732,13 +732,13 @@ This endpoint returns an array which contains information on every non-MFA crede
 
 @return CredentialsResponseBody
 */
-func (a *MembersApiService) ListMemberCredentials(ctx context.Context, memberGUID string, userGUID string) (atrium.CredentialsResponseBody, *http.Response, error) {
+func (a *MembersApiService) ListMemberCredentials(ctx context.Context, memberGUID string, userGUID string) (CredentialsResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.CredentialsResponseBody
+		localVarReturnValue CredentialsResponseBody
 	)
 
 	// create path and map variables
@@ -824,7 +824,7 @@ func (a *MembersApiService) ListMemberCredentials(ctx context.Context, memberGUI
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.CredentialsResponseBody
+			var v CredentialsResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -849,13 +849,13 @@ Use this endpoint for information on what multi-factor authentication challenges
 
 @return ChallengesResponseBody
 */
-func (a *MembersApiService) ListMemberMFAChallenges(ctx context.Context, memberGUID string, userGUID string) (atrium.ChallengesResponseBody, *http.Response, error) {
+func (a *MembersApiService) ListMemberMFAChallenges(ctx context.Context, memberGUID string, userGUID string) (ChallengesResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.ChallengesResponseBody
+		localVarReturnValue ChallengesResponseBody
 	)
 
 	// create path and map variables
@@ -941,7 +941,7 @@ func (a *MembersApiService) ListMemberMFAChallenges(ctx context.Context, memberG
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.ChallengesResponseBody
+			var v ChallengesResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -979,13 +979,13 @@ type ListMemberTransactionsOpts struct {
 	RecordsPerPage optional.Int32
 }
 
-func (a *MembersApiService) ListMemberTransactions(ctx context.Context, memberGUID string, userGUID string, localVarOptionals *ListMemberTransactionsOpts) (atrium.TransactionsResponseBody, *http.Response, error) {
+func (a *MembersApiService) ListMemberTransactions(ctx context.Context, memberGUID string, userGUID string, localVarOptionals *ListMemberTransactionsOpts) (TransactionsResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.TransactionsResponseBody
+		localVarReturnValue TransactionsResponseBody
 	)
 
 	// create path and map variables
@@ -1083,7 +1083,7 @@ func (a *MembersApiService) ListMemberTransactions(ctx context.Context, memberGU
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.TransactionsResponseBody
+			var v TransactionsResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1116,13 +1116,13 @@ type ListMembersOpts struct {
 	RecordsPerPage optional.Int32
 }
 
-func (a *MembersApiService) ListMembers(ctx context.Context, userGUID string, localVarOptionals *ListMembersOpts) (atrium.MembersResponseBody, *http.Response, error) {
+func (a *MembersApiService) ListMembers(ctx context.Context, userGUID string, localVarOptionals *ListMembersOpts) (MembersResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.MembersResponseBody
+		localVarReturnValue MembersResponseBody
 	)
 
 	// create path and map variables
@@ -1213,7 +1213,7 @@ func (a *MembersApiService) ListMembers(ctx context.Context, userGUID string, lo
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.MembersResponseBody
+			var v MembersResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1238,13 +1238,13 @@ Use this endpoint to read the attributes of a specific member.
 
 @return MemberResponseBody
 */
-func (a *MembersApiService) ReadMember(ctx context.Context, memberGUID string, userGUID string) (atrium.MemberResponseBody, *http.Response, error) {
+func (a *MembersApiService) ReadMember(ctx context.Context, memberGUID string, userGUID string) (MemberResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.MemberResponseBody
+		localVarReturnValue MemberResponseBody
 	)
 
 	// create path and map variables
@@ -1330,7 +1330,7 @@ func (a *MembersApiService) ReadMember(ctx context.Context, memberGUID string, u
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.MemberResponseBody
+			var v MemberResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1355,13 +1355,13 @@ This endpoint provides the status of the member&#39;s most recent aggregation ev
 
 @return MemberConnectionStatusResponseBody
 */
-func (a *MembersApiService) ReadMemberStatus(ctx context.Context, memberGUID string, userGUID string) (atrium.MemberConnectionStatusResponseBody, *http.Response, error) {
+func (a *MembersApiService) ReadMemberStatus(ctx context.Context, memberGUID string, userGUID string) (MemberConnectionStatusResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.MemberConnectionStatusResponseBody
+		localVarReturnValue MemberConnectionStatusResponseBody
 	)
 
 	// create path and map variables
@@ -1447,7 +1447,7 @@ func (a *MembersApiService) ReadMemberStatus(ctx context.Context, memberGUID str
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.MemberConnectionStatusResponseBody
+			var v MemberConnectionStatusResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1473,13 +1473,13 @@ This endpoint answers the challenges needed when a member has been challenged by
 
 @return MemberResponseBody
 */
-func (a *MembersApiService) ResumeMember(ctx context.Context, memberGUID string, userGUID string, body atrium.MemberResumeRequestBody) (atrium.MemberResponseBody, *http.Response, error) {
+func (a *MembersApiService) ResumeMember(ctx context.Context, memberGUID string, userGUID string, body MemberResumeRequestBody) (MemberResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Put")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.MemberResponseBody
+		localVarReturnValue MemberResponseBody
 	)
 
 	// create path and map variables
@@ -1567,7 +1567,7 @@ func (a *MembersApiService) ResumeMember(ctx context.Context, memberGUID string,
 		}
 
 		if localVarHttpResponse.StatusCode == 202 {
-			var v atrium.MemberResponseBody
+			var v MemberResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -1599,13 +1599,13 @@ type UpdateMemberOpts struct {
 	Body optional.Interface
 }
 
-func (a *MembersApiService) UpdateMember(ctx context.Context, memberGUID string, userGUID string, localVarOptionals *UpdateMemberOpts) (atrium.MemberResponseBody, *http.Response, error) {
+func (a *MembersApiService) UpdateMember(ctx context.Context, memberGUID string, userGUID string, localVarOptionals *UpdateMemberOpts) (MemberResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Put")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.MemberResponseBody
+		localVarReturnValue MemberResponseBody
 	)
 
 	// create path and map variables
@@ -1637,7 +1637,7 @@ func (a *MembersApiService) UpdateMember(ctx context.Context, memberGUID string,
 	// body params
 	if localVarOptionals != nil && localVarOptionals.Body.IsSet() {
 
-		localVarOptionalBody, localVarOptionalBodyok := localVarOptionals.Body.Value().(atrium.MemberUpdateRequestBody)
+		localVarOptionalBody, localVarOptionalBodyok := localVarOptionals.Body.Value().(MemberUpdateRequestBody)
 		if !localVarOptionalBodyok {
 			return localVarReturnValue, nil, reportError("body should be MemberUpdateRequestBody")
 		}
@@ -1700,7 +1700,7 @@ func (a *MembersApiService) UpdateMember(ctx context.Context, memberGUID string,
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.MemberResponseBody
+			var v MemberResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

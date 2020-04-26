@@ -154,13 +154,13 @@ The fetch statements endpoint begins fetching statements for a member.
 
 @return MemberResponseBody
 */
-func (a *StatementsApiService) FetchStatements(ctx context.Context, memberGUID string, userGUID string) (atrium.MemberResponseBody, *http.Response, error) {
+func (a *StatementsApiService) FetchStatements(ctx context.Context, memberGUID string, userGUID string) (MemberResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.MemberResponseBody
+		localVarReturnValue MemberResponseBody
 	)
 
 	// create path and map variables
@@ -246,7 +246,7 @@ func (a *StatementsApiService) FetchStatements(ctx context.Context, memberGUID s
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.MemberResponseBody
+			var v MemberResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -280,13 +280,13 @@ type ListMemberStatementsOpts struct {
 	RecordsPerPage optional.Int32
 }
 
-func (a *StatementsApiService) ListMemberStatements(ctx context.Context, memberGUID string, userGUID string, localVarOptionals *ListMemberStatementsOpts) (atrium.StatementsResponseBody, *http.Response, error) {
+func (a *StatementsApiService) ListMemberStatements(ctx context.Context, memberGUID string, userGUID string, localVarOptionals *ListMemberStatementsOpts) (StatementsResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.StatementsResponseBody
+		localVarReturnValue StatementsResponseBody
 	)
 
 	// create path and map variables
@@ -378,7 +378,7 @@ func (a *StatementsApiService) ListMemberStatements(ctx context.Context, memberG
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.StatementsResponseBody
+			var v StatementsResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -404,13 +404,13 @@ Use this endpoint to download a specified statement. The endpoint URL is the sam
 
 @return StatementResponseBody
 */
-func (a *StatementsApiService) ReadMemberStatement(ctx context.Context, memberGUID string, userGUID string, statementGUID string) (atrium.StatementResponseBody, *http.Response, error) {
+func (a *StatementsApiService) ReadMemberStatement(ctx context.Context, memberGUID string, userGUID string, statementGUID string) (StatementResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.StatementResponseBody
+		localVarReturnValue StatementResponseBody
 	)
 
 	// create path and map variables
@@ -497,7 +497,7 @@ func (a *StatementsApiService) ReadMemberStatement(ctx context.Context, memberGU
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.StatementResponseBody
+			var v StatementResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

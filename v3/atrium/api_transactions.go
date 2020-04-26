@@ -33,13 +33,13 @@ Use this endpoint to categorize, cleanse, and classify transactions. These trans
 
 @return TransactionsCleanseAndCategorizeResponseBody
 */
-func (a *TransactionsApiService) CleanseAndCategorizeTransactions(ctx context.Context, body atrium.TransactionsCleanseAndCategorizeRequestBody) (atrium.TransactionsCleanseAndCategorizeResponseBody, *http.Response, error) {
+func (a *TransactionsApiService) CleanseAndCategorizeTransactions(ctx context.Context, body TransactionsCleanseAndCategorizeRequestBody) (TransactionsCleanseAndCategorizeResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.TransactionsCleanseAndCategorizeResponseBody
+		localVarReturnValue TransactionsCleanseAndCategorizeResponseBody
 	)
 
 	// create path and map variables
@@ -125,7 +125,7 @@ func (a *TransactionsApiService) CleanseAndCategorizeTransactions(ctx context.Co
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.TransactionsCleanseAndCategorizeResponseBody
+			var v TransactionsCleanseAndCategorizeResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -162,13 +162,13 @@ type ListUserTransactionsOpts struct {
 	ToDate         optional.String
 }
 
-func (a *TransactionsApiService) ListUserTransactions(ctx context.Context, userGUID string, localVarOptionals *ListUserTransactionsOpts) (atrium.TransactionsResponseBody, *http.Response, error) {
+func (a *TransactionsApiService) ListUserTransactions(ctx context.Context, userGUID string, localVarOptionals *ListUserTransactionsOpts) (TransactionsResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.TransactionsResponseBody
+		localVarReturnValue TransactionsResponseBody
 	)
 
 	// create path and map variables
@@ -265,7 +265,7 @@ func (a *TransactionsApiService) ListUserTransactions(ctx context.Context, userG
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.TransactionsResponseBody
+			var v TransactionsResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -290,13 +290,13 @@ This endpoint allows you to view information about a specific transaction that b
 
 @return TransactionResponseBody
 */
-func (a *TransactionsApiService) ReadTransaction(ctx context.Context, transactionGUID string, userGUID string) (atrium.TransactionResponseBody, *http.Response, error) {
+func (a *TransactionsApiService) ReadTransaction(ctx context.Context, transactionGUID string, userGUID string) (TransactionResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.TransactionResponseBody
+		localVarReturnValue TransactionResponseBody
 	)
 
 	// create path and map variables
@@ -382,7 +382,7 @@ func (a *TransactionsApiService) ReadTransaction(ctx context.Context, transactio
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.TransactionResponseBody
+			var v TransactionResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

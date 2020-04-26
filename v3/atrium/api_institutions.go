@@ -51,13 +51,13 @@ type ListInstitutionsOpts struct {
 	SupportsTransactionHistory    optional.Bool
 }
 
-func (a *InstitutionsApiService) ListInstitutions(ctx context.Context, localVarOptionals *ListInstitutionsOpts) (atrium.InstitutionsResponseBody, *http.Response, error) {
+func (a *InstitutionsApiService) ListInstitutions(ctx context.Context, localVarOptionals *ListInstitutionsOpts) (InstitutionsResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.InstitutionsResponseBody
+		localVarReturnValue InstitutionsResponseBody
 	)
 
 	// create path and map variables
@@ -162,7 +162,7 @@ func (a *InstitutionsApiService) ListInstitutions(ctx context.Context, localVarO
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.InstitutionsResponseBody
+			var v InstitutionsResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -186,13 +186,13 @@ This endpoint allows you to see information for a specific institution.
 
 @return InstitutionResponseBody
 */
-func (a *InstitutionsApiService) ReadInstitution(ctx context.Context, institutionCode string) (atrium.InstitutionResponseBody, *http.Response, error) {
+func (a *InstitutionsApiService) ReadInstitution(ctx context.Context, institutionCode string) (InstitutionResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.InstitutionResponseBody
+		localVarReturnValue InstitutionResponseBody
 	)
 
 	// create path and map variables
@@ -277,7 +277,7 @@ func (a *InstitutionsApiService) ReadInstitution(ctx context.Context, institutio
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.InstitutionResponseBody
+			var v InstitutionResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -301,13 +301,13 @@ Use this endpoint to see which credentials will be needed to create a member for
 
 @return CredentialsResponseBody
 */
-func (a *InstitutionsApiService) ReadInstitutionCredentials(ctx context.Context, institutionCode string) (atrium.CredentialsResponseBody, *http.Response, error) {
+func (a *InstitutionsApiService) ReadInstitutionCredentials(ctx context.Context, institutionCode string) (CredentialsResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.CredentialsResponseBody
+		localVarReturnValue CredentialsResponseBody
 	)
 
 	// create path and map variables
@@ -392,7 +392,7 @@ func (a *InstitutionsApiService) ReadInstitutionCredentials(ctx context.Context,
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.CredentialsResponseBody
+			var v CredentialsResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

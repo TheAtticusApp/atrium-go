@@ -33,13 +33,13 @@ This endpoint will return a URL for an embeddable version of MX Connect.
 
 @return ConnectWidgetResponseBody
 */
-func (a *ConnectWidgetApiService) GetConnectWidget(ctx context.Context, userGUID string, body atrium.ConnectWidgetRequestBody) (atrium.ConnectWidgetResponseBody, *http.Response, error) {
+func (a *ConnectWidgetApiService) GetConnectWidget(ctx context.Context, userGUID string, body ConnectWidgetRequestBody) (ConnectWidgetResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Post")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.ConnectWidgetResponseBody
+		localVarReturnValue ConnectWidgetResponseBody
 	)
 
 	// create path and map variables
@@ -126,7 +126,7 @@ func (a *ConnectWidgetApiService) GetConnectWidget(ctx context.Context, userGUID
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.ConnectWidgetResponseBody
+			var v ConnectWidgetResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

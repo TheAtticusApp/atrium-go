@@ -47,13 +47,13 @@ type ListAccountTransactionsOpts struct {
 	RecordsPerPage optional.Int32
 }
 
-func (a *AccountsApiService) ListAccountTransactions(ctx context.Context, accountGUID string, userGUID string, localVarOptionals *ListAccountTransactionsOpts) (atrium.TransactionsResponseBody, *http.Response, error) {
+func (a *AccountsApiService) ListAccountTransactions(ctx context.Context, accountGUID string, userGUID string, localVarOptionals *ListAccountTransactionsOpts) (TransactionsResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.TransactionsResponseBody
+		localVarReturnValue TransactionsResponseBody
 	)
 
 	// create path and map variables
@@ -151,7 +151,7 @@ func (a *AccountsApiService) ListAccountTransactions(ctx context.Context, accoun
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.TransactionsResponseBody
+			var v TransactionsResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -184,13 +184,13 @@ type ListUserAccountsOpts struct {
 	RecordsPerPage optional.Int32
 }
 
-func (a *AccountsApiService) ListUserAccounts(ctx context.Context, userGUID string, localVarOptionals *ListUserAccountsOpts) (atrium.AccountsResponseBody, *http.Response, error) {
+func (a *AccountsApiService) ListUserAccounts(ctx context.Context, userGUID string, localVarOptionals *ListUserAccountsOpts) (AccountsResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.AccountsResponseBody
+		localVarReturnValue AccountsResponseBody
 	)
 
 	// create path and map variables
@@ -281,7 +281,7 @@ func (a *AccountsApiService) ListUserAccounts(ctx context.Context, userGUID stri
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.AccountsResponseBody
+			var v AccountsResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -306,13 +306,13 @@ Reading an account allows you to get information about a specific account that b
 
 @return AccountResponseBody
 */
-func (a *AccountsApiService) ReadAccount(ctx context.Context, accountGUID string, userGUID string) (atrium.AccountResponseBody, *http.Response, error) {
+func (a *AccountsApiService) ReadAccount(ctx context.Context, accountGUID string, userGUID string) (AccountResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.AccountResponseBody
+		localVarReturnValue AccountResponseBody
 	)
 
 	// create path and map variables
@@ -398,7 +398,7 @@ func (a *AccountsApiService) ReadAccount(ctx context.Context, accountGUID string
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.AccountResponseBody
+			var v AccountResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -424,13 +424,13 @@ Reading an account allows you to get information about a specific account that b
 
 @return AccountResponseBody
 */
-func (a *AccountsApiService) ReadAccountByMemberGUID(ctx context.Context, accountGUID string, memberGUID string, userGUID string) (atrium.AccountResponseBody, *http.Response, error) {
+func (a *AccountsApiService) ReadAccountByMemberGUID(ctx context.Context, accountGUID string, memberGUID string, userGUID string) (AccountResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.AccountResponseBody
+		localVarReturnValue AccountResponseBody
 	)
 
 	// create path and map variables
@@ -517,7 +517,7 @@ func (a *AccountsApiService) ReadAccountByMemberGUID(ctx context.Context, accoun
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.AccountResponseBody
+			var v AccountResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

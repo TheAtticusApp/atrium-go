@@ -32,13 +32,13 @@ Returns information about a particular merchant, such as a logo, name, and websi
 
 @return MerchantResponseBody
 */
-func (a *MerchantsApiService) ReadMerchant(ctx context.Context, merchantGUID string) (atrium.MerchantResponseBody, *http.Response, error) {
+func (a *MerchantsApiService) ReadMerchant(ctx context.Context, merchantGUID string) (MerchantResponseBody, *http.Response, error) {
 	var (
 		localVarHttpMethod  = strings.ToUpper("Get")
 		localVarPostBody    interface{}
 		localVarFileName    string
 		localVarFileBytes   []byte
-		localVarReturnValue atrium.MerchantResponseBody
+		localVarReturnValue MerchantResponseBody
 	)
 
 	// create path and map variables
@@ -123,7 +123,7 @@ func (a *MerchantsApiService) ReadMerchant(ctx context.Context, merchantGUID str
 		}
 
 		if localVarHttpResponse.StatusCode == 200 {
-			var v atrium.MerchantResponseBody
+			var v MerchantResponseBody
 			err = a.client.decode(&v, localVarBody, localVarHttpResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
