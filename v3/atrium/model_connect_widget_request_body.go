@@ -16,4 +16,5 @@ type ConnectWidgetRequestBody struct {
 	Mode                     string  `json:"mode,omitempty"`
 	UiMessageVersion         float32 `json:"ui_message_version,omitempty"`
 	UpdateCredentials        bool    `json:"update_credentials,omitempty"`
+	WaitForFullAggregation   bool 	 `json:"wait_for_full_aggregation,omitempty"`
 }
